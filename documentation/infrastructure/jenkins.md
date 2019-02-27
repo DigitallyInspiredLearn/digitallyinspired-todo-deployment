@@ -1,4 +1,3 @@
-[#6](#6)
 Type: Jenkins
 Hostname: ip-10-142-1-5
 Ip: Private - 10.142.1.5
