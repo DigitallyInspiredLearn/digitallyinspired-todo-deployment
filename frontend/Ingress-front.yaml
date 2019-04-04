@@ -1,0 +1,16 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: todo-front
+spec:
+  rules:
+  - host: todo-list-front.k8s.local
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: todo-front
+          servicePort: 7700
+
+
+

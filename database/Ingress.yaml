@@ -1,0 +1,8 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: todo-mysql
+spec:
+  backend:
+    serviceName: todo-mysql
+    servicePort: 80

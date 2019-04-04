@@ -1,0 +1,13 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: todo-app
+spec:
+  rules:
+  - host: todo-list.k8s.local
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: todo-app
+          servicePort: 8080
