@@ -1,6 +1,6 @@
 node {
     stage('Check List') {
-        List test = readYaml file: 'users.yml'
+        List test = readYaml file: 'jenkins-users/users.yml'
         test.each { println it }
         sh 'echo Hello'
     }
