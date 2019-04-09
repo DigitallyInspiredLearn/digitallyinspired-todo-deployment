@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
       - name: todo-front
-        image: 618548633277.dkr.ecr.eu-west-1.amazonaws.com/<imageName:tag>
+        image: 618548633277.dkr.ecr.eu-west-1.amazonaws.com/todolist-ui:<tag>
         imagePullPolicy: Always
         ports:
         - containerPort: 7700
