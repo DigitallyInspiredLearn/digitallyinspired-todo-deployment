@@ -1,0 +1,29 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: <deployment-name>
+  namespace: <namespace>
+  labels:
+    app: todo-app
+spec:
+  selector:
+    matchLabels:
+      app: todo-app
+      tier: <tier>
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: todo-app
+        tier: <tier>
+    spec:
+      containers:
+      - name: <container-name>
+        image: 618548633277.dkr.ecr.eu-west-1.amazonaws.com/<imageName:tag>
+        imagePullPolicy: Always
+        ports:
+        - containerPort: <port>
+      imagePullSecrets:
+      - name: eu-west-1-ecr-registry
+
