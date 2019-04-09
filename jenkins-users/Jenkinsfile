@@ -1,0 +1,7 @@
+node {
+    stage('Check List') {
+        List test = readYaml file: 'users.yml'
+        test.each { println it }
+        sh 'echo Hello'
+    }
+}
