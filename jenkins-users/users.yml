@@ -1,4 +1,7 @@
 users:
-  - Jora
-  - Vadim
-  - Dima
+  - name: Jora
+    email: jorik@digitallyinspired.com
+  - name: Vadim
+    email: vadik@digitallyinspired.com
+  - name: Dima
+    email: dimon@digitallyinspired.com
