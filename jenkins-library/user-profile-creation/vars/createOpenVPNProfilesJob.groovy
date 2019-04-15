@@ -1,8 +1,8 @@
 #!/usr/bin/env groovy
 
 def call() {
-	node {
-	    stage('Check List') {
+    node {
+	stage('Check List') {
             def users
             dir('digitallyinspired-todo-deployment/jenkins-users') {
                 users = readYaml(file: 'users.yml').users
@@ -27,8 +27,8 @@ def call() {
                 sh 'mv client-configs/files/newest-user/* .'
                 stash(includes: '*.ovpn', name: 'new_profiles')
             }
-	    }
-	    stage('Make secrets') {
+	}
+	stage('Make secrets') {
             dir('digitallyinspired-todo-deployment/jenkins-users') {
                 unstash('new_profiles')
                 files = findFiles(glob: '*.ovpn')
@@ -40,7 +40,7 @@ def call() {
                     stash(includes: '*.yaml.sealed', name: 'new_sealed_profiles')
                 }
             }
-	    }
+	}
         stage('Push') {
             sh 'tree'
             unstash('new_sealed_profiles')
@@ -54,5 +54,5 @@ def call() {
                 branch: 'master'
             sh 'git push origin master'
         }
-	}
+    }
 }
