@@ -1,7 +1,3 @@
-node {
-    stage('Check List') {
-        List test = readYaml file: 'jenkins-users/users.yml'
-        test.each { println it }
-        sh 'echo Hello'
-    }
-}
+@Library('user-profiles-creation') _
+
+createOpenVPNProfilesJob.call()
