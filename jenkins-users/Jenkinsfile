@@ -1,3 +1,3 @@
-@Library('user-profiles-creation') _
+@Library('user-profile-creation') _
 
 createOpenVPNProfilesJob.call()
