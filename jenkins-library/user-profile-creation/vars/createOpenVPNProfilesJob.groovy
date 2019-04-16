@@ -49,9 +49,6 @@ def call() {
                 sh "git add ${file.name}"
             }
             sh "git commit -m 'Generated sealed user profile'"
-            git url: "ssh://git@github.com:DigitallyInspiredLearn/digitallyinspired-todo-deployment.git",
-                credentialsId: 'ssh-bastion-creds',
-                branch: 'master'
             sh 'git push origin master'
         }
     }
