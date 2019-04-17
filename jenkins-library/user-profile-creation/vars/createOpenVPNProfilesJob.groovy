@@ -61,7 +61,8 @@ def call() {
                     def file = "${file.name}"
                     encryptViaKubeseal(file, file.take(file.lastIndexOf('.')), 'sealed.yaml')
                 }
-                stash(includes: '*.yaml.sealed', name: 'new_sealed_profiles')
+                sh 'tree'
+//                stash(includes: '*.yaml.sealed', name: 'new_sealed_profiles')
             }
         }
 //         stage('Push') {
