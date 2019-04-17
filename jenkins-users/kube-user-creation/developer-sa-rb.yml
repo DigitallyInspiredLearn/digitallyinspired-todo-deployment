@@ -2,7 +2,7 @@
 apiVersion: v1
 kind: ServiceAccount
 metadata:
-  name: <USER_NAME>
+  name: <LOWERCASE_USER_NAME>
   namespace: <NAMESPACE>
 
 ---
@@ -13,7 +13,7 @@ metadata:
   namespace: <NAMESPACE>
 subjects:
 - kind: ServiceAccount
-  name: <USER_NAME>
+  name: <LOWERCASE_USER_NAME>
   namespace: <NAMESPACE>
 roleRef:
   apiGroup: rbac.authorization.k8s.io
