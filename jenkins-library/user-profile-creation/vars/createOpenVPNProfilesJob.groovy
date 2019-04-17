@@ -11,7 +11,7 @@ def call() {
             dir('digitallyinspired-todo-deployment/jenkins-users/configs') {
                 for (user in users) {
                     if (fileExists("${it}.ovpn")) continue
-                    def passphrase = sh returnStdout: true, script: 'cat /dev/urandom | base64 | head -c10'
+                    def passphrase = sh returnStdout: true, script: 'cat /dev/urandom | base64 | head -c 10'
                     def built = build job: 'CreateOpenVPNProfile', parameters: [
                         [$class: 'StringParameterValue', name: 'OVPN_USER_NAME', value: user.name],
                         [$class: 'StringParameterValue', name: 'OVPN_USER_EMAIL', value: user.email],
