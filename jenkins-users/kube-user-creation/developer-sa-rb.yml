@@ -2,18 +2,18 @@
 apiVersion: v1
 kind: ServiceAccount
 metadata:
-  name: <USER_NAME>
+  name: <LOWERCASE_USER_NAME>
   namespace: <NAMESPACE>
 
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: RoleBinding
 metadata:
-  name: <USER_NAME>-rb
+  name: <LOWERCASE_USER_NAME>-rb
   namespace: <NAMESPACE>
 subjects:
 - kind: ServiceAccount
-  name: <USER_NAME>
+  name: <LOWERCASE_USER_NAME>
   namespace: <NAMESPACE>
 roleRef:
   apiGroup: rbac.authorization.k8s.io
