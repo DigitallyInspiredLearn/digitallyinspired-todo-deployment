@@ -22,7 +22,25 @@ spec:
       - name: todo-app
         image: 618548633277.dkr.ecr.eu-west-1.amazonaws.com/todolist-app:<tag>
         imagePullPolicy: Always
+        env:
+        - name: JAVA_TOOL_OPTIONS
+          value: "-Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=5550 -Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false"
         ports:
         - containerPort: 8080
+      - name: jmx-exporter
+        image: sscaling/jmx-prometheus-exporter
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 5556
       imagePullSecrets:
       - name: eu-west-1-ecr-registry
+      volumes:
+      - configMap:
+          defaultMode: 420
+          name: jmx-exporter
+        name: jmx-exporter
+
+          
+
+        
+       
