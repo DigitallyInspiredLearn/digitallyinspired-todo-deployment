@@ -1,0 +1,10 @@
+apiVersion: monitoring.coreos.com/v1alpha1
+kind: ServiceMonitor
+metadata:
+  name: todo-service-monitor
+spec:
+  selector:
+    matchLabels:
+      app: todo-app
+  endpoints:
+  - port: jmx-exporter

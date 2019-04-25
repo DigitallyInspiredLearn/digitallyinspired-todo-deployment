@@ -2,9 +2,10 @@ apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: todo-app
+  namespace: <namespace>
 spec:
   rules:
-  - host: todo-list.k8s.local
+  - host: <...k8s.local>
     http:
       paths:
       - path: /

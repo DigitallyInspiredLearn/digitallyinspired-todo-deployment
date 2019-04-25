@@ -2,6 +2,7 @@ apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: todo-mysql
+  namespace: <namespace>
 spec:
   backend:
     serviceName: todo-mysql
